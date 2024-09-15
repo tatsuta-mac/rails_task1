@@ -29,6 +29,8 @@ gem 'bigdecimal'
 gem 'base64'
 gem 'mutex_m'
 gem 'psych', '~> 3.1'
+gem 'drb'
+gem 'solargraph', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -55,6 +57,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rails-controller-testing', '1.0.5'
+  gem 'minitest', '5.18.0'
+  gem 'minitest-reporters', '1.6.0'
+  gem 'guard', '2.18.0'
+  gem 'guard-minitest', '2.4.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
