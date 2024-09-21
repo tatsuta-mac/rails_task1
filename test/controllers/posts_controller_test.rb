@@ -14,7 +14,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get posts_index_url
     assert_response :success
-    assert_select "title", "Home | #{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
   test "should get about" do
