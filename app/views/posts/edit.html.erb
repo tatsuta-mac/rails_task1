@@ -1,5 +1,5 @@
 
-<h3>予定の編集</h3>
+<h2 class="PageTitle__text">予定を編集してください</h2>
 
 <%= render "shared/error", obj: @post %>
 
@@ -27,15 +27,17 @@
         </tr>
     </table>
 
-    <div>   
-        <ul>
-            <li><%= f.submit "編集を完了する" %></li>
-            <li><%= link_to "キャンセル", :posts %></li>
-        </ul>
+        <div class="FormContainer__buttons">
+            <%= link_to "キャンセル", :posts, class: "btn button Button--secondary"%>
+            <%= f.submit "保存", class: "btn Button Button--primary"%>
+            
+        </div>
     </div>
-
-    <% if flash[:notice_no_update] %>
-        <p class="notice"><%= flash[:notice_no_update] %></p>
-    <% end %>
+    <p>
+        <% flash.each do |message_type, message| %>
+            <div class="flash-message <%= message_type %>"><%= message %></div>
+        <% end %>
+        <% yield %>
+    </p>
 
 <% end %>

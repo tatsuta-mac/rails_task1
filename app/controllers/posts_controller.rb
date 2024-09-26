@@ -10,10 +10,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      flash[:notice_create] = "スケジュールを登録しました"
-      redirect_to :posts
+      flash[:notice] = "スケジュールを登録しました"
+      redirect_to posts_url
     else
-      flash[:notice_no_create] = "スケジュールの登録に失敗しました"
+      flash.now[:alert] = "スケジュールの登録に失敗しました"
       render "new"
     end
   end
@@ -29,10 +29,10 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      flash[:notice_update] = "スケジュールを更新しました"
-      redirect_to :posts
+      flash[:notice] = "スケジュールを更新しました"
+      redirect_to posts_url
     else
-      flash[:notice_no_update] = "スケジュールを更新できませんでした"
+      flash.now[:alert] = "スケジュールの更新に失敗しました"
       render "edit"
     end
   end
@@ -40,8 +40,8 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:notide_destroy] = "スケジュールを削除しました"
-    redirect_to :posts
+    flash[:notice] = "スケジュールを削除しました"
+    redirect_to posts_url
   end
 
   private

@@ -1,7 +1,5 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 body {
+    background-color: #f6f6f6;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -9,23 +7,13 @@ body {
 }
 
 .container {
-    min-width: 980px;
+    max-width: 980px;
 }
 
 .Navbar {
     background-color: #1c1d3b;
     height: 50px;
     margin-bottom: 24px;
-}
-
-.navbar {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
 }
 
 .navbar>.container, .navbar>.container-fluid {
@@ -42,7 +30,6 @@ body {
     line-height: 18px;
     margin: 0 auto;
 }
-
 .PageTitle {
     align-items: baseline;
     display: flex;
@@ -78,32 +65,55 @@ h2 {
     padding: 12px 20px;
 }
 
-.button-primary {
-    border-color: #0d6efd;
+
+.Table {
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 0;
 }
 
-.btn {
-    display: inline-block;
+
+
+.FormContainer {
+    background-color: #fff;
+    border-radius: 4px;
+    height: fit-content;
+    margin: 18px auto 0;
+    padding: 24px;
+}
+
+.ErrorMessage {
+    color: #ff4949;
+}
+
+.alert {
+    color:#fff; 
+    background:#ff4949;
     text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
     border: 1px solid transparent;
-    transition: color .15s;
+    border-radius: 0.25rem;
+    padding:12px; font-weight:850;
+    list-style: none;
 }
 
 
-table {
-    th{
-        padding: 10px 20px;
-        border-bottom: 2px solid gray;
-    }
-    td {
-        background-color: #f9ecd5;
-        padding:  10px 20px;
-    }
+.flash-message {
+    border-radius: 5px;
+    padding: 16px 24px;
+    margin: 16px 0px;
 }
 
 .notice {
-    background-color: #ccf;
-    padding: 5px;
+    background-color: #0067c0;
+    color: #fff;
+    border: solid 1px transparent;
+    border-radius: 0.25rem;
+    padding:12px; font-weight:850;
+    list-style: none;
+}
+
+.FormContainer__buttons {
+    display: flex;
+    justify-content: flex-end;
 }

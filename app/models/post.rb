@@ -5,8 +5,10 @@ class Post < ApplicationRecord
     validates :memo, length: { maximum: 500 }
     validate :start_end_check
 
+private
     def start_end_check
-        erros.add(:end_date, "は開始日より後の日付を指定してください") unless 
-           self.start_date < self.end_date 
+        if start_date != nil && end_date!= nil
+            errors.add(:end_date, "は開始日以降の日付で選択してください。") unless self.start_date < self.end_date    
+        end
     end
 end
