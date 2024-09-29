@@ -1,0 +1,34 @@
+<div class="container">
+    <section class="FormWrapper">
+        <%= link_to "← 一覧に戻る", posts_path, class: "Link Link--with-icon"%>
+        <div class="PageTitle">
+            <h2 class="PageTitle__text"><%= @post.title %></h2>
+            <%= link_to edit_post_path(@post.id) do %> 
+                <button class="btn Button Button--edit">編集</button>
+            <% end %>
+        </div>
+        <div class="table-responsive FormContainer">
+            <%= form_with model: @post do |f| %>
+            <table class="table table-bordered DetailTable">
+            <tr>
+                <th>開始日</th>
+                <td><%= l @post.start_date %></td>
+            </tr>
+            <tr>
+                <th>終了日</th>
+                <td><%= l @post.end_date %></td>
+            </tr>
+            <tr>
+                <th>終日</th>
+                <td><%= @post.in_all_day ? 'o': '' %></td>
+            </tr>
+            <tr>
+                <th>スケジュールメモ</th>
+                <td><%= @post.memo %></td>
+            </tr>
+            </table>
+        </div>
+    </section>
+</div>
+
+<% end %>

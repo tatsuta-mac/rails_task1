@@ -4,9 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.3.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
+gem 'rails', '= 6.1.3.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'sqlite3', '1.6.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -25,8 +25,22 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'bigdecimal'
+gem 'base64'
+gem 'mutex_m'
+gem 'psych', '~> 3.1'
+gem 'drb'
+
+gem 'bootstrap', '~> 4.5.0'
+gem 'jquery-rails'
+
+gem 'importmap-rails'
+gem 'turbo-rails'
+gem 'stimulus-rails'
+
+
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootsnap', '1.16.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,6 +64,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rails-controller-testing', '1.0.5'
+  gem 'minitest', '5.18.0'
+  gem 'minitest-reporters', '1.6.0'
+  gem 'guard', '2.18.0'
+  gem 'guard-minitest', '2.4.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
